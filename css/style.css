@@ -60,14 +60,14 @@ body {
 
 /* HERO */
 .hero {
-    height: 100vh;
+    min-height: 100vh;
+    padding-top: 90px; /* space for fixed navbar */
     background: linear-gradient(-45deg,#0d6efd,#6610f2,#20c997,#0dcaf0);
     background-size: 400% 400%;
     animation: gradientBG 10s ease infinite;
     color: white;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     text-align: center;
 }
@@ -85,6 +85,7 @@ body {
     height:200px;
     margin:auto;
 }
+
 .profile-wrapper::before{
     content:"";
     position:absolute;
@@ -94,6 +95,7 @@ body {
     animation:rotate 6s linear infinite;
     z-index:0;
 }
+
 .profile-img{
     position:relative;
     width:100%;
@@ -104,10 +106,12 @@ body {
     z-index:1;
     animation: float 4s ease-in-out infinite;
 }
+
 @keyframes rotate{
     0%{transform:rotate(0deg);}
     100%{transform:rotate(360deg);}
 }
+
 @keyframes float{
     0%{transform:translateY(0);}
     50%{transform:translateY(-15px);}
@@ -123,6 +127,7 @@ body {
     padding:10px 25px;
     transition:0.3s;
 }
+
 .btn-custom:hover{
     background:#0dcaf0;
     color:white;
@@ -135,6 +140,7 @@ body {
     margin-bottom:40px;
     position:relative;
 }
+
 .section-title::after{
     content:"";
     width:80px;
@@ -154,13 +160,16 @@ body {
     transition: 0.3s;
     box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
+
 .skill-card:hover{
     transform: translateY(-10px);
     box-shadow: 0 10px 30px rgba(0,0,0,0.2);
 }
+
 .skill-icon{
     font-size: 40px;
 }
+
 .skill-bar{
     background: #e0e0e0;
     height: 6px;
@@ -168,6 +177,7 @@ body {
     margin-top: 10px;
     overflow: hidden;
 }
+
 .skill-level{
     height: 100%;
     background: #0dcaf0;
@@ -182,6 +192,7 @@ body {
     backdrop-filter: blur(10px);
     transition:0.3s;
 }
+
 .card:hover{
     transform: translateY(-10px);
     box-shadow: 0 15px 30px rgba(0,0,0,0.2);
@@ -194,7 +205,24 @@ body {
     color:#6610f2;
     transition:0.3s;
 }
+
 .contact-icons i:hover{
     color:#0dcaf0;
     transform:scale(1.2);
+}
+
+/* MOBILE FIX */
+@media (max-width:768px){
+
+.hero{
+    min-height:auto;
+    padding-top:80px;
+}
+
+.profile-wrapper{
+    width:160px;
+    height:160px;
+    margin-top:10px;
+}
+
 }
